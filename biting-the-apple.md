@@ -23,52 +23,86 @@ paginate: true
 footer: "Biting the Apple: Unlocking macOS with Python"
 -->
 
-# Slide 2
+# About Me
 
-foobar
+![bg right:50%](images/TRS80-Model-III.png)
+
+- Hobbyist programmer
+- First code in Tandy BASIC on a TRS-80 Model III
+- Reformed Perl hacker
+- Pythonista since 2018
+- [github.com/RhetTbull](https://github.com/RhetTbull)
 
 ---
 
-# Slide 3
+# Installing Python on macOS
 
-## This is some code.
+- brew (link to article)
+- conda
+- python.org
+- uv
 
-```python
-"""Given a PyPI package name, print the latest version number of the package.
+---
 
-This uses the standard library instead of requests to avoid adding a dependency to the project.
-"""
+# Automating Mac Apps
 
-from __future__ import annotations
+- examples of AppleScript with Notes, Photos
 
-import json
-import ssl
-import sys
-import urllib.request
+---
 
-VERSION_INFO_URL = "https://pypi.org/pypi/{}/json"
+# Isn't This Talk Supposed To Be About Python?
 
+- py-applescript
+- macnotesapp
+- photoscript
 
-def get_latest_version(package_name: str) -> str:
-    """Get latest version of package_name from PyPI"""
-    try:
-        url = VERSION_INFO_URL.format(package_name)
-        ssl_context = ssl._create_unverified_context()
-        response = urllib.request.urlopen(url, context=ssl_context)
-        data = json.load(response)
-        return data["info"]["version"]
-    except Exception as e:
-        raise ValueError(f"Error retrieving version for {package_name}: {e}")
+---
 
+# Examples with code snippets
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print(f"Usage: {sys.argv[0]} PACKAGE_NAME")
-        sys.exit(1)
-    package_name = sys.argv[1]
-    try:
-        print(get_latest_version(package_name))
-    except ValueError as e:
-        print(e)
-        sys.exit(1)
-```
+---
+
+# Accessing Native APIs
+
+- PyObjC
+- Rubicon
+
+---
+
+# PyObjc Overview
+
+---
+
+# PyObjc Examples
+
+- Speech, vision, camera, convert heic to jpeg
+- use ChatGPT Objc -> Python
+
+---
+
+# Add a GUI
+
+- Rumps
+- others
+
+---
+
+# Creating a Standalone App
+
+- PyInstaller
+- Py2App
+- PyApp
+- Briefcase
+
+---
+
+# Permissions & Entitlements
+
+- disclaim.py
+- Locationator example
+
+---
+
+# Questions?
+
+- Link to slides
