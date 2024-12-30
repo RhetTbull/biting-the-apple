@@ -43,14 +43,25 @@
 <h2 id="span-styletext-align-center-display-blockjust-use-uv-or-pythonorgspan"><span style="text-align: center; display: block;">Just use uv or python.org</span></h2>
 <footer>Biting the Apple: Unlocking macOS with Python</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-class="invert" data-paginate="true" data-footer="Biting the Apple: Unlocking macOS with Python" data-theme="default" lang="en-US" class="invert" data-marpit-pagination="4" style="--class:invert;--paginate:true;--footer:Biting the Apple: Unlocking macOS with Python;--theme:default;" data-marpit-pagination-total="13">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="invert" data-paginate="true" data-footer="Biting the Apple: Unlocking macOS with Python" data-theme="default" lang="en-US" class="invert" data-marpit-pagination="4" style="--class:invert;--paginate:true;--footer:Biting the Apple: Unlocking macOS with Python;--theme:default;--marpit-advanced-background-split:33%;" data-marpit-pagination-total="13" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="vertical"><figure style="background-image:url(&quot;images/new-note-scripteditor.png&quot;);background-size:90%;"></figure><figure style="background-image:url(&quot;images/new-note-screenshot.png&quot;);background-size:100%;"></figure></div></section></foreignObject><foreignObject width="67%" height="720"><section id="4" data-class="invert" data-paginate="true" data-footer="Biting the Apple: Unlocking macOS with Python" data-theme="default" lang="en-US" class="invert" data-marpit-pagination="4" style="--class:invert;--paginate:true;--footer:Biting the Apple: Unlocking macOS with Python;--theme:default;--marpit-advanced-background-split:33%;" data-marpit-pagination-total="13" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
 <h1 id="automating-mac-apps">Automating Mac Apps</h1>
-<ul>
-<li>examples of AppleScript with Notes, Photos</li>
-</ul>
+
+<p>Many Mac apps are scriptable using <a href="https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/conceptual/ASLR_fundamentals.html">AppleScript</a></p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-applescript"><span class="hljs-keyword">tell</span> <span class="hljs-built_in">application</span> <span class="hljs-string">&quot;Notes&quot;</span>
+	<span class="hljs-built_in">activate</span>
+
+	<span class="hljs-keyword">set</span> noteTitle <span class="hljs-keyword">to</span> <span class="hljs-string">&quot;Hello World&quot;</span>
+	<span class="hljs-keyword">set</span> noteBody <span class="hljs-keyword">to</span> <span class="hljs-string">&quot;This is my note.&quot;</span>
+
+	<span class="hljs-keyword">tell</span> account <span class="hljs-string">&quot;iCloud&quot;</span>
+		<span class="hljs-keyword">set</span> newNote <span class="hljs-keyword">to</span> make new note <span class="hljs-keyword">at</span> folder <span class="hljs-string">&quot;Notes&quot;</span> <span class="hljs-keyword">with</span> properties
+		          {<span class="hljs-built_in">name</span>:noteTitle, body:noteBody}
+	<span class="hljs-keyword">end</span> <span class="hljs-keyword">tell</span>
+<span class="hljs-keyword">end</span> <span class="hljs-keyword">tell</span>
+</code></pre>
 <footer>Biting the Apple: Unlocking macOS with Python</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-class="invert" data-paginate="true" data-footer="Biting the Apple: Unlocking macOS with Python" data-theme="default" lang="en-US" class="invert" data-marpit-pagination="5" style="--class:invert;--paginate:true;--footer:Biting the Apple: Unlocking macOS with Python;--theme:default;" data-marpit-pagination-total="13">
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-class="invert" data-paginate="true" data-footer="Biting the Apple: Unlocking macOS with Python" data-theme="default" lang="en-US" class="invert" data-marpit-pagination="4" style="" data-marpit-pagination-total="13" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-class="invert" data-paginate="true" data-footer="Biting the Apple: Unlocking macOS with Python" data-theme="default" lang="en-US" class="invert" data-marpit-pagination="5" style="--class:invert;--paginate:true;--footer:Biting the Apple: Unlocking macOS with Python;--theme:default;" data-marpit-pagination-total="13">
 <h1 id="isnt-this-talk-supposed-to-be-about-python">Isn't This Talk Supposed To Be About Python?</h1>
 <ul>
 <li>py-applescript</li>

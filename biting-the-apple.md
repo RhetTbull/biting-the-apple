@@ -68,7 +68,24 @@ footer: "Biting the Apple: Unlocking macOS with Python"
 
 # Automating Mac Apps
 
-- examples of AppleScript with Notes, Photos
+![bg vertical right:33% 90%](images/new-note-scripteditor.png)
+![bg 100%](images/new-note-screenshot.png)
+
+Many Mac apps are scriptable using [AppleScript](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/conceptual/ASLR_fundamentals.html)
+
+```applescript
+tell application "Notes"
+	activate
+
+	set noteTitle to "Hello World"
+	set noteBody to "This is my note."
+
+	tell account "iCloud"
+		set newNote to make new note at folder "Notes" with properties
+		          {name:noteTitle, body:noteBody}
+	end tell
+end tell
+```
 
 ---
 
