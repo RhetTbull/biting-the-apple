@@ -3,6 +3,23 @@ theme: default
 marp: true
 ---
 
+<style>
+/* Adjust text size on slide */
+section.small-text h2 {
+  font-size: 0.85em !important;
+}
+
+section.small-text h3 {
+  font-size: 0.85em !important;
+}
+
+section.small-text p, section.small-text li, section.small-text b {
+  font-size: 0.85em; /* Shrink regular text */
+}
+
+/* To use this, add <!-- _class: "invert small-text" --> before the slide you want to use it on*/
+</style>
+
 <!--
 _backgroundColor: black
 _color: white
@@ -37,10 +54,15 @@ footer: "Biting the Apple: Unlocking macOS with Python"
 
 # Installing Python on macOS
 
-- brew (link to article)
-- conda
-- python.org
-- uv
+- [Homebrew](https://brew.sh): [Homebrew Python is Not For You](https://justinmayer.com/posts/homebrew-python-is-not-for-you/)
+
+- [Conda](https://docs.conda.io/projects/conda/en/latest/index.html)
+
+- [Python.org](https://www.python.org/downloads/)
+
+- [uv](https://docs.astral.sh/uv/): `uv python install 3.13`
+
+## <span style="text-align: center; display: block;">Just use uv or python.org</span>
 
 ---
 
