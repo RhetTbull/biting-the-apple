@@ -1,0 +1,3 @@
+macnotesapp==0.8.0
+photoscript==0.4.0
+py-applescript==1.0.3
