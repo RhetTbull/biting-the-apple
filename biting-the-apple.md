@@ -6,15 +6,15 @@ marp: true
 <style>
 /* Adjust text size on slide */
 section.small-text h2 {
-  font-size: 0.85em !important;
+  font-size: 0.75em !important;
 }
 
 section.small-text h3 {
-  font-size: 0.85em !important;
+  font-size: 0.75em !important;
 }
 
 section.small-text p, section.small-text li, section.small-text b {
-  font-size: 0.85em; /* Shrink regular text */
+  font-size: 0.75em; /* Shrink regular text */
 }
 
 /* To use this, add <!-- _class: "invert small-text" --> before the slide you want to use it on*/
@@ -165,26 +165,55 @@ create_reminder("Finish HSV.py talk", due_date="2025-02-01T17:00:00")
 
 ---
 
-# Accessing Native APIs
+# Beyond Scripting: Accessing the Power of Native APIs
 
-- PyObjC
-- Rubicon
+![bg right contain](images/AVSpeechSynthesizer.png)
+
+Apple provides useful APIs in Objective-C and Swift that enable features like extracting text from images, speech synthesis, accessing the Mac's camera, etc.
+
+Can we use these from Python?
 
 ---
 
-# PyObjc Overview
+# Yes! Python to Objective-C Bridge
+
+## [PyObjC](https://pyobjc.readthedocs.io/en/latest/)
+
+Appears to have at least tacit blessing from Apple. Stable, offers support for most macOS APIs. Does not support iOS.
+
+## [Rubicon](https://rubicon-objc.readthedocs.io/en/stable/)
+
+Part of the [BeeWare](https://beeware.org) project. Supported by [Anaconda](https://www.anaconda.com). Supports both macOS and iOS.
 
 ---
 
-# PyObjc Examples
+<!-- _class: "invert small-text" -->
+# Simple PyObjC Example
 
-- Speech, vision, camera, convert heic to jpeg
-- use ChatGPT Objc -> Python
+![bg right:40% contain](images/copyItemAtPath.png)
 
+Use native [copy-on-write for APFS](https://eclecticlight.co/2020/04/14/copy-move-and-clone-files-in-apfs-a-primer/) file systems.
+
+- Python's native [file copy functions](https://docs.python.org/3/library/shutil.html) cannot take advantage of copy-on-write; also do not copy all metadata.
+- Apple's [NSFileManager](https://developer.apple.com/documentation/foundation/nsfilemanager) provides [copyItemAtPath:toPath:error:](https://developer.apple.com/documentation/foundation/nsfilemanager/1407903-copyitematpath) method that does use copy-on-write
+
+Python implementation:
+
+```python
+import Foundation
+
+def copyfile(src: str, dest: str):
+    """Copy file from src to dest using NSFileManager"""
+    filemgr = Foundation.NSFileManager.defaultManager()
+    success, error = filemgr.copyItemAtPath_toPath_error_(src, dest, None)
+    if not success:
+        raise OSError(error)
+```
 ---
 
 # Add a GUI
-
+- Speech, vision, camera, convert heic to jpeg
+- use ChatGPT Objc -> Python
 - Rumps
 - others
 
@@ -209,3 +238,16 @@ create_reminder("Finish HSV.py talk", due_date="2025-02-01T17:00:00")
 # Questions?
 
 - Link to slides
+
+---
+
+# Resources
+
+- [AppleScript](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/conceptual/ASLR_fundamentals.html)
+- [PyObjC](https://pyobjc.readthedocs.io/en/latest/)
+- [Rubicon](https://rubicon-objc.readthedocs.io/en/stable/)
+- macnotesapp
+- photoscript
+- PyXA
+
+---
