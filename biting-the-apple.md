@@ -209,6 +209,66 @@ def copyfile(src: str, dest: str):
     if not success:
         raise OSError(error)
 ```
+
+---
+<!-- _class: "invert small-text" -->
+# Speech Synthesis Example
+
+```python
+import AVFoundation
+from Foundation import NSObject
+from PyObjCTools.AppHelper import runEventLoop, stopEventLoop
+
+class SpeechSynthesizerDelegate(NSObject):
+    def speechSynthesizer_didFinishSpeechUtterance_(self, synthesizer, utterance):
+        stopEventLoop()
+
+def speak_string(text: str) -> None:
+    synthesizer = AVFoundation.AVSpeechSynthesizer.alloc().init()
+    utterance = AVFoundation.AVSpeechUtterance.speechUtteranceWithString_(text)
+    voice = AVFoundation.AVSpeechSynthesisVoice.voiceWithLanguage_("en-US")
+    utterance.setVoice_(voice)
+    delegate = SpeechSynthesizerDelegate.alloc().init()
+    synthesizer.setDelegate_(delegate)
+    synthesizer.speakUtterance_(utterance)
+    runEventLoop()
+```
+
+---
+<!-- _class: "invert small-text" -->
+# Status Bar Apps
+
+![bg vertical right:30% contain](images/rumps-menu.png)
+![bg contain](images/rumps-alert.png)
+
+[Rumps: Ridiculously Uncomplicated macOS Python Statusbar](https://github.com/jaredks/rumps)
+
+```python
+import rumps
+
+class AwesomeStatusBarApp(rumps.App):
+    @rumps.clicked("Check button")
+    def onoff(self, sender):
+        sender.state = not sender.state
+
+    @rumps.clicked("Say hello")
+    def sayhello(self, _):
+        rumps.alert("Hello", "Hello HSV.py!", "Goodbye")
+
+if __name__ == "__main__":
+    AwesomeStatusBarApp("Awesome App").run()
+```
+
+<!--
+Good for:
+- Notification-center-based app
+- Controlling daemons / launching separate programs
+- Updating simple info from web APIs on a timer
+
+Not good for:
+- Any app that is first and foremost a GUI application
+-->
+
 ---
 
 # Add a GUI
@@ -240,14 +300,18 @@ def copyfile(src: str, dest: str):
 - Link to slides
 
 ---
-
+<!-- _class: "invert small-text" -->
 # Resources
 
-- [AppleScript](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/conceptual/ASLR_fundamentals.html)
-- [PyObjC](https://pyobjc.readthedocs.io/en/latest/)
-- [Rubicon](https://rubicon-objc.readthedocs.io/en/stable/)
-- macnotesapp
-- photoscript
-- PyXA
+## Automation
+- [AppleScript](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/conceptual/ASLR_fundamentals.html): Apple's scripting language
+- [macnotesapp](https://github.com/RhetTbull/macnotesapp): Automate Apple Notes
+- [PhotoScript](https://github.com/RhetTbull/PhotoScript): Automate Apple Photos
+- [PyXA](https://github.com/SKaplanOfficial/PyXA): Python for automation
+
+## Native APIs
+- [PyObjC](https://pyobjc.readthedocs.io/en/latest/): Python to Objective-C bridge
+- [Rubicon](https://rubicon-objc.readthedocs.io/en/stable/): Alternate Python to Objective-C bridge
+- [Rumps](https://github.com/jaredks/rumps): Ridiculously Uncomplicated macOS Python Statusbar apps
 
 ---
