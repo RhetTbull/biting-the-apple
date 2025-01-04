@@ -7,6 +7,21 @@ It is a work in progress.
 ## Building the Presentation
 
 The presentating is built using [marp](https://marp.app/).
+
+To install marp (assumes you are using homebrew):
+
+First install node:
+
+```bash
+brew install node
+```
+
+Then you can run marp via [npx](https://docs.npmjs.com/cli/v8/commands/npx). I create an alias:
+
+```bash
+alias marp='npx @marp-team/marp-cli@latest'
+```
+
 After installing marp, you can build the presentation with the following command:
 
 ```bash

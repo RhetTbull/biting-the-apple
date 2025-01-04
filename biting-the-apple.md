@@ -1,24 +1,25 @@
 ---
 theme: default
 marp: true
+style: |
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  section.small-text h2 {
+    font-size: 0.75em !important;
+  }
+
+  section.small-text h3 {
+    font-size: 0.75em !important;
+  }
+
+  section.small-text p, section.small-text li, section.small-text b {
+    font-size: 0.75em; /* Shrink regular text */
+  }
 ---
-
-<style>
-/* Adjust text size on slide */
-section.small-text h2 {
-  font-size: 0.75em !important;
-}
-
-section.small-text h3 {
-  font-size: 0.75em !important;
-}
-
-section.small-text p, section.small-text li, section.small-text b {
-  font-size: 0.75em; /* Shrink regular text */
-}
-
-/* To use this, add <!-- _class: "invert small-text" --> before the slide you want to use it on*/
-</style>
 
 <!--
 _backgroundColor: black
@@ -303,15 +304,27 @@ Not good for:
 <!-- _class: "invert small-text" -->
 # Resources
 
+<div class="columns">
+<div>
+
 ## Automation
+
 - [AppleScript](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/conceptual/ASLR_fundamentals.html): Apple's scripting language
 - [macnotesapp](https://github.com/RhetTbull/macnotesapp): Automate Apple Notes
 - [PhotoScript](https://github.com/RhetTbull/PhotoScript): Automate Apple Photos
 - [PyXA](https://github.com/SKaplanOfficial/PyXA): Python for automation
 
+</div>
+
+<div>
+
 ## Native APIs
+
 - [PyObjC](https://pyobjc.readthedocs.io/en/latest/): Python to Objective-C bridge
 - [Rubicon](https://rubicon-objc.readthedocs.io/en/stable/): Alternate Python to Objective-C bridge
 - [Rumps](https://github.com/jaredks/rumps): Ridiculously Uncomplicated macOS Python Statusbar apps
+
+</div>
+</div>
 
 ---
