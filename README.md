@@ -28,6 +28,10 @@ After installing marp, you can build the presentation with the following command
 rm -f biting-the-apple.html && marp biting-the-apple.md --html --allow-local-files
 ```
 
+## View this presentation online
+
+View online [here](https://rhettbull.github.io/biting-the-apple/).
+
 ## License
 
 This presentation is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
