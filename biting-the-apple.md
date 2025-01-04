@@ -299,15 +299,20 @@ Not good for:
 ---
 
 # Permissions & Entitlements
+<!-- _class: "invert small-text" -->
 
-- disclaim.py
-- Locationator example
+![bg vertical contain left:40%](images/ghostty-permission-reminders.png)
+![bg contain](images/textinator_desktop_access.png)
 
----
+## macOS has a ~~naggy~~ robust security model
 
-# Questions?
+- Certain features require user approval
+- [Entitlements](https://developer.apple.com/documentation/bundleresources/entitlements): executable permission to use a technology / service
+- Permissions: control run-time access to sensitive user data (e.g. location, files)
 
-- Link to slides
+### Command line apps: the Terminal app is responsible for requesting permission.
+
+### GUI apps: the application is responsible for requesting permission.
 
 ---
 <!-- _class: "invert small-text" -->
@@ -323,23 +328,40 @@ Not good for:
 - [PhotoScript](https://github.com/RhetTbull/PhotoScript): Automate Apple Photos
 - [PyXA](https://github.com/SKaplanOfficial/PyXA): Python for automation
 
-</div>
-
-<div>
-
 ## Native APIs
 
 - [PyObjC](https://pyobjc.readthedocs.io/en/latest/): Python to Objective-C bridge
 - [Rubicon](https://rubicon-objc.readthedocs.io/en/stable/): Alternate Python to Objective-C bridge
-- [Rumps](https://github.com/jaredks/rumps): Ridiculously Uncomplicated macOS Python Statusbar apps
+- [Rumps](https://github.com/jaredks/rumps): macOS statusbar apps
+
+</div>
+
+<div>
 
 ## GUIs
 
-- [Tkinter](https://docs.python.org/3/library/tkinter.html): Ships with Python standard library
-- [Toga](https://beeware.org/project/projects/libraries/toga/): From BeeWare, native widgets, early development
-- [AppKitGUI](https://github.com/RhetTbull/appkitgui): My own mini-framework, shows how to use [AppKit](https://developer.apple.com/documentation/appkit) from Python
+- [Tkinter](https://docs.python.org/3/library/tkinter.html): Standard library
+- [Toga](https://beeware.org/project/projects/libraries/toga/): Native widgets
+- [AppKitGUI](https://github.com/RhetTbull/appkitgui): My own macOS native mini-framework
+
+## Installers / App Packaging
+
+- [PyInstaller](https://pyinstaller.org/en/stable/): Good for command line tools
+- [Py2App](https://py2app.readthedocs.io/en/latest/): Standalone Mac apps
+- [PyApp](https://github.com/ofek/pyapp): Self-bootstrapping apps
+- [Briefcase](https://briefcase.readthedocs.io/en/stable/): Similar to Py2App
+- [AppleCrate](https://github.com/RhetTbull/applecrate): Create installers
 
 </div>
 </div>
 
 ---
+
+# Questions?
+<!-- _class: "invert small-text" -->
+
+![bg 60% right:40%](images/qrcode.png)
+
+This talk: [https://github.com/RhetTbull/biting-the-apple](https://github.com/RhetTbull/biting-the-apple)
+GitHub: [https://github.com/RhetTbull](https://github.com/RhetTbull)
+LinkedIn: [https://www.linkedin.com/in/rhettbull/](https://www.linkedin.com/in/rhettbull/)
