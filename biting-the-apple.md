@@ -287,10 +287,14 @@ Not good for:
 
 # Creating a Standalone App
 
-- PyInstaller
-- Py2App
-- PyApp
-- Briefcase
+![bg vertical contain right:40%](images/applecrate.png)
+![bg contain](images/textinator-installer.png)
+
+- [PyInstaller](https://pyinstaller.org/en/stable/): Good for command line tools
+- [Py2App](https://py2app.readthedocs.io/en/latest/): Standalone Mac apps (like [py2exe](https://pypi.org/project/py2exe/) but for macOS)
+- [PyApp](https://github.com/ofek/pyapp): Self-bootstrapping apps with self-update, very fast, written in Rust
+- [Briefcase](https://briefcase.readthedocs.io/en/stable/): From BeeWare, similar to Py2App
+- [AppleCrate](https://github.com/RhetTbull/applecrate): Create installers for your app
 
 ---
 
