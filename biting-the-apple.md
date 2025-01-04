@@ -271,12 +271,17 @@ Not good for:
 -->
 
 ---
+<!-- _class: "invert small-text" -->
+# What about a GUI?
 
-# Add a GUI
-- Speech, vision, camera, convert heic to jpeg
-- use ChatGPT Objc -> Python
-- Rumps
-- others
+![bg contain left:40%](images/appkitgui.png)
+
+## That's a whole other talk
+
+- Most Python GUI frameworks work fine with macOS
+- [Tkinter](https://docs.python.org/3/library/tkinter.html): Ships with Python standard library
+- [Toga](https://beeware.org/project/projects/libraries/toga/): From BeeWare, native widgets, early development
+- [AppKitGUI](https://github.com/RhetTbull/appkitgui): My own mini-framework, shows how to use [AppKit](https://developer.apple.com/documentation/appkit) from Python
 
 ---
 
@@ -323,6 +328,12 @@ Not good for:
 - [PyObjC](https://pyobjc.readthedocs.io/en/latest/): Python to Objective-C bridge
 - [Rubicon](https://rubicon-objc.readthedocs.io/en/stable/): Alternate Python to Objective-C bridge
 - [Rumps](https://github.com/jaredks/rumps): Ridiculously Uncomplicated macOS Python Statusbar apps
+
+## GUIs
+
+- [Tkinter](https://docs.python.org/3/library/tkinter.html): Ships with Python standard library
+- [Toga](https://beeware.org/project/projects/libraries/toga/): From BeeWare, native widgets, early development
+- [AppKitGUI](https://github.com/RhetTbull/appkitgui): My own mini-framework, shows how to use [AppKit](https://developer.apple.com/documentation/appkit) from Python
 
 </div>
 </div>
