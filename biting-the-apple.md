@@ -41,6 +41,16 @@ paginate: true
 footer: "Biting the Apple: Unlocking macOS with Python"
 -->
 
+![bg right:40% 70%](images/presentation-qr.png)
+
+This presentation:
+[https://rhettbull.github.io/biting-the-apple/](https://rhettbull.github.io/biting-the-apple/)
+
+Source:
+[https://github.com/RhetTbull/biting-the-apple](https://github.com/RhetTbull/biting-the-apple)
+
+---
+
 # About Me
 
 ![bg right:50%](images/TRS80-Model-III.png)
@@ -148,20 +158,13 @@ for photo in photoscript.PhotosLibrary().selection:
 <!-- Supports most Apple Mac apps and some 3rd party apps. -->
 
 ```python
-from datetime import datetime
+import datetime
 import PyXA
 
-def create_reminder(name, due_date=None):
-    """Creates a new reminder in the Mac Reminders app's default list."""
-    try:
-        reminders_app = PyXA.Application("Reminders")
-        due_date = datetime.fromisoformat(due_date) if due_date else None
-        reminder = reminders_app.new_reminder(name=name, due_date=due_date)
-        print(f"Reminder '{name}' created successfully.")
-    except Exception as e:
-        print(f"Failed to create reminder: {e}")
-
-create_reminder("Finish HSV.py talk", due_date="2025-02-01T17:00:00")
+reminders_app = PyXA.Application("Reminders")
+reminders_app.new_reminder(
+    name="Finish HSV.py talk", due_date=datetime.datetime(2025, 2, 10)
+)
 ```
 
 ---
