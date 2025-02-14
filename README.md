@@ -1,8 +1,6 @@
 # Biting the Apple: Unlocking macOS with Python
 
-This is a presentation I am preparing for [hsv.py](https://www.meetup.com/hsv-py/).
-
-It is a work in progress.
+This is a presentation I prepared for [hsv.py](https://www.meetup.com/hsv-py/) meetup.
 
 ## Building the Presentation
 
